@@ -1,8 +1,11 @@
-import express from "express"
-import { banner, getAllBanner } from "../Controllers/BannerController.js"
-const router = express.Router()
+import express from 'express';
+import { banner, deletebanner, getAllBanner, updateBanner } from '../Controllers/BannerController.js';
 
-router.post('/create', banner)
-router.get('/getbanners', getAllBanner)
+const router = express.Router();
 
-export default router
+router.post('/create', banner);
+router.get('/getbanners', getAllBanner);
+router.put('/:id',updateBanner );/* Add your edit banner controller here */
+router.delete('/:id',deletebanner );/* Add your edit banner controller here */
+
+export default router;
